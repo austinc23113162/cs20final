@@ -1,0 +1,393 @@
+/* Page section style */
+body {
+  font-family: "Inconsolata";
+  font-size: 16px;
+  background-color: #f5f3ee;
+
+  margin: 0;
+}
+
+header {
+  margin: 0px;
+  padding: 20px 0px 40px;
+  min-height: 50px;
+}
+
+main {
+  background-color: #f5f3ee;
+  display: flex;
+}
+
+.l-calendar {
+  flex: 35%;
+  background-color: #f5f3ee;
+  filter: drop-shadow(0px -4px 8px #7b707053);
+  min-height: 100vh;
+  z-index: 3;
+}
+
+.r-write {
+  flex: 65%;
+  height: 100vh;
+  overflow-y: scroll;
+  z-index: 2;
+}
+
+/* Text element styles */
+p {
+  line-height: 1.6;
+}
+
+h1 {
+  font-family: "Inconsolata";
+  font-size: 48px;
+  font-weight: 1000;
+}
+
+h2 {
+  font-family: "Inconsolata";
+  font-size: 18px;
+  font-weight: 1000;
+  text-align: center;
+}
+
+/* highlight */
+hl {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 70%, #85c0c5 50%);
+  padding-bottom: 4px;
+}
+
+/* calendar grid */
+
+.cal-bg {
+  background-color: #fffefc;
+  filter: drop-shadow(0px 2px 5px #7b707053);
+  border-radius: 16px;
+
+  box-sizing: border-box;
+  padding: 5% 8% 15%;
+  margin: auto;
+  width: 80%;
+  min-width: 310px;
+}
+
+.cal-container {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 3%;
+}
+
+
+.cal-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 400px;
+    margin: 0 auto;    
+    padding: 10px 40px;
+}
+
+.cal-nav button {
+    font-weight: 800;
+    background-color: #ffffff00;
+    border: 0px none;
+}
+
+.cell {
+    background-color: #fffefc;
+    border-radius: 8px;
+    border: none;
+    font-size: 18px;
+    font-family: "Inconsolata";
+    filter: drop-shadow(0px 1px 2px #c8c4c3);
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+}
+  
+.cell-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.cell p {
+    margin: 0;
+    padding: -100%;
+    color: rgba(255, 255, 255, 0);
+    font-weight: 800;
+}
+  
+
+.cell:hover {
+    background-image: linear-gradient(rgb(0 0 0/40%) 0 0);
+    color: rgba(255, 255, 255, 0);
+}
+
+.cell:hover p{
+    color: white;
+}
+    
+
+.cell-label {
+  background-color: #fffefc;
+  text-align: center;
+
+  margin: 0px;
+  padding: 0px;
+}
+
+.cell-label p {
+  color: white;
+  margin: 0px;
+  padding: 0px;
+  mix-blend-mode: difference;
+}
+
+/* diary entry */
+.title {
+  background-color: #fffefc;
+  filter: drop-shadow(0px 2px 5px #7b707053);
+  border-radius: 16px;
+
+  box-sizing: border-box;
+  padding: 2% 3%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  min-height: 50px;
+  margin-bottom: 15px;
+  gap: 15px;
+  align-items: stretch;
+}
+
+.entry {
+  background-color: #fffefc;
+  filter: drop-shadow(0px 2px 5px #7b707053);
+  border-radius: 16px;
+  border: 0px none;
+
+  box-sizing: border-box;
+  padding: 5%;
+  margin: auto;
+  display: flex;
+  gap: 30px;
+  align-items: stretch;
+  min-height: auto;
+}
+
+.entry form {
+    background-color: #e4dfd5;
+    max-width: 60vw;
+    padding: 0px;
+    border: 0px none;
+    border-color: rgba(255, 255, 255, 0);
+    border-radius: 20px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+}
+
+.title,
+.entry {
+  width: 100%;
+  max-width: 60vw;
+}
+
+.title input {
+  width: auto;
+  min-width: 80%;
+}
+
+.l-entry,
+.r-entry {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  width: auto;
+  /* background-color: red; */
+}
+
+.l-entry {
+  flex: 0 1 30%;
+  align-items: center;
+}
+
+.r-entry {
+  flex: 1 1 60%;
+}
+
+.colorPicker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.r-entry textarea {
+  width: 100%;
+  max-width: 100%;
+  resize: none;
+  border-radius: 8px;
+  padding: 2%;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+#values {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+#tags {
+  /* margin-bottom: 10px; */
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+}
+
+.title input {
+  font-family: "Inconsolata";
+  background-color: #fffefc;
+  border: 0;
+  font-size: 18px;
+  font-weight: 1000;
+}
+
+button {
+
+    font-size: 18px;
+    font-family: "Inconsolata";
+    padding: 8px;
+    border-radius: 8px;
+    padding: 2%;
+    border: 1px solid #ccc;
+}
+
+button:hover {
+    background-image: linear-gradient(#98969466 0 0);
+}
+
+.nav {
+  display: flex;
+  flex: 1; 
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 20px;
+}
+
+.nav ul {
+  display: flex;
+  font-size: 20px;
+  list-style-type: none;
+}
+
+ul#nav li {
+  display: flex;
+  font-size: 18px;
+}
+
+.nav li a {
+  text-decoration: none;
+  padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  color: #000000;
+  font-weight: 700;
+}
+
+ul li:first-child {
+  margin-right: 30px;
+}
+
+.nav li a:hover {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 60%, #85c0c5 50%);
+}
+
+
+@media (max-width: 900px) {
+  main {
+    display: block;
+    /* flex-direction: column;
+        align-items: center; */
+  }
+
+  .nav {
+    justify-content: flex-start !important;
+  }
+
+  .nav ul li {
+    font-size: 13px;
+  }
+
+  .nav ul {
+    font-size: 15px;
+  }
+
+  .l-calendar {
+    margin: auto;
+    display: block;
+    float: none;
+    padding-bottom: 40px;
+    min-height: 0px;
+  }
+
+  .r-write {
+    display: block;
+    float: none;
+    padding: 0px;
+    overflow-y: initial;
+  }
+
+  #values,
+  #tags {
+    width: 100%;
+    max-width: 150px;
+    text-align: center;
+  }
+
+  #tags {
+    padding: 6px 10px;
+    box-sizing: border-box;
+  }
+
+  .title,
+  .entry {
+    width: 100%;
+    max-width: 80vw;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .title {
+    gap: 0px;
+  }
+
+  .l-entry,
+  .r-entry {
+    padding: 5% 2% 3% 2%;
+  }
+
+  .title input {
+    text-align: center;
+  }
+}
+
+p#instructions {
+  text-align: center;
+  padding: 20px
+}
+

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Headspace - Subscribe</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inconsolata"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Calistoga"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@jaames/iro@5"></script>
+
+    <style type="text/css">
+      * {
+        box-sizing: border-box;
+      }
+
+      /* container holding subscription plans */
+      .payment-container {
+        text-align: center;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* header for container */
+      .payment-title {
+        max-width: 980px;
+        width: 100%;
+        min-height: 150px;
+        background-color: #fffefc;
+        border-radius: 16px;
+        filter: drop-shadow(0px 2px 5px #7b707053);
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      /* container holding all plans */
+      .plans {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 40px;
+      }
+
+      /* container for each individual plan */
+      .plan {
+        background-color: #fffefc;
+        border-radius: 16px;
+        filter: drop-shadow(0px 2px 5px #7b707053);
+        max-width: 300px;
+        width: 100%;
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        align-items: center;
+        transition: transform 0.2s ease;
+      }
+
+      /* hover effect */
+      .plan:hover {
+        transform: scale(1.05);
+      }
+    </style>
+
+    <script>
+      function goToHomepage() {
+        // alert("You're staying on the free plan!");
+        window.location.href = "homepage.php";
+      }
+    </script>
+  </head>
+  <body>
+    <header style="display: flex">
+      <div
+        style="
+          background-color: #fffefc;
+          padding: 15px;
+          width: 350px;
+          height: 80px;
+          filter: drop-shadow(2px 2px 4px #7b70708b);
+          display: flex;
+          rotate: -2deg;
+        "
+      >
+        <img src="logo.png" style="height: 50px; padding-right: 20px" />
+        <h1 style="margin: 0px; font-size: 36px"><hl>Subscribe</hl></h1>
+      </div>
+      <div class="nav">
+        <ul>
+          <li><a href="homepage.php">Back to Diary</a></li>
+          <li><a href="login.php">Log Out</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="payment-container">
+      <div class="payment-title">
+        <h1 style="margin: 0px; font-size: 36px">
+          <hl>Unlock Insights with a Subscription</hl>
+        </h1>
+        <p>See your full mood statistics and patterns by subscribing.</p>
+      </div>
+
+      <div class="plans">
+        <!-- free plan -->
+        <div class="plan">
+          <h2>Free</h2>
+          <p>
+            $0 / month<br />Continue with the basic diary. No access to stats or
+            analytics.
+          </p>
+          <button onclick="goToHomepage()">Stay on Free Plan</button>
+        </div>
+
+        <!-- monthly plan -->
+        <div class="plan">
+          <h2>Monthly</h2>
+          <p>$2 / month<br />Access to writing stats and trends.</p>
+          <form action="subscribe.php">
+            <button>Subscribe</button>
+          </form>
+        </div>
+
+        <!-- yearly plan -->
+        <div class="plan">
+          <h2>Yearly</h2>
+          <p>$20 / year<br />Get 2 months free. Full stats access.</p>
+          <form action="subscribe.php">
+            <button>Subscribe</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
